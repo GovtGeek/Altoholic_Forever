@@ -21,7 +21,11 @@ addon:Controller("AltoholicUI.RealmPicker", {
 		frame:SetMenuWidth(frame.menuWidth) 
 		frame:SetButtonWidth(20)
 		frame:Initialize(frame.DropDownRealm_Initialize)
-		frame:SetCurrentRealm(GetRealmName())
+		if GetRealmName() ~= "" then
+			frame:SetCurrentRealm(GetRealmName())
+		else
+			frame:SetCurrentRealm(DataStore.ThisRealm)
+		end
 	end,
 	DropDownRealm_Initialize = function(frame)
 		if not frame.currentAccount or not frame.currentRealm then return end

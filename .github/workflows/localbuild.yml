@@ -93,6 +93,10 @@ jobs:
           mv temp/DataStore_Spells .
           rm -rf temp
           
+          git clone -b ${{ github.ref_name }} https://github.com/${{ github.repository_owner }}/DataStore_Stats.git temp
+          mv temp/DataStore_Stats .
+          rm -rf temp
+
           git clone -b ${{ github.ref_name }} https://github.com/${{ github.repository_owner }}/DataStore_Talents.git temp
           mv temp/DataStore_Talents .
           rm -rf temp
